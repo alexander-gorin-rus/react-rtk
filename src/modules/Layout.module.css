@@ -1,0 +1,12 @@
+.header {
+    height: 70px;
+    background-color: purple;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-section{
+    margin: 10px;
+}
