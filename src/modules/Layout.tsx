@@ -10,7 +10,7 @@ const Layout = () => {
     <>
       <article>
         <header className={Style.header}>
-            <h1>sdsds</h1>
+            <h1>Список чеков</h1>
         </header>
         <section className={Style["content-section"]}>
             <GlobalNav />
