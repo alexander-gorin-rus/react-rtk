@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alexander",
+      "email": "al.gorin78@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Zhenia",
+      "email": "zheniya@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Sergey",
+      "email": "sergey@gmail.com"
+    },
+    {
+      "name": "Tatiyana",
+      "email": "tatiyana@mail.ru",
+      "id": 4
+    },
+    {
+      "name": "Olga",
+      "email": "Olga@mail.ru",
+      "id": 5
+    },
+    {
+      "name": "Nataliya",
+      "email": "Nataliya@mail.ru",
+      "id": 6
+    },
+    {
+      "name": "Masha",
+      "email": "Masha@gmail.com",
+      "id": 7
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

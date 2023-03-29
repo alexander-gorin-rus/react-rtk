@@ -14,18 +14,11 @@ export enum ApiStatus {
 export interface IUserState {
     list: IUser[];
     listStatus: ApiStatus;
+    createUserFormStatus: ApiStatus
 }
 
-export const defaultList: IUser[] = [{
-    id: 1,
-    name: 'Alex',
-    email: 'al.gorin78@gmail.com'
-},
-{
 
-    id: 2,
-    name: 'Zhenia',
-    email: 'zheniya@gmail.com'
+export interface IUserForm {
+    name: string;
+    email: string;
 }
-
-] 
