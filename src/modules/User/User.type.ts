@@ -21,4 +21,5 @@ export interface IUserState {
 export interface IUserForm {
     name: string;
     email: string;
+    id?: number | null
 }

@@ -3,12 +3,15 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { RootState } from '../../app/store'
 import Modal from '../../components/Modal';
 import { ApiStatus, IUser } from './User.type';
-import { getUsersListAction } from './UserSlice';
+import { deleteUserAction, getUsersListAction } from './UserSlice';
 
 const UserList = () => {
   const {list, listStatus} = useAppSelector((state: RootState) => state.user);
 
   const [userDataToView, setUserDataToView] = useState<IUser | null>(null);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [editUserId, setEditUserId] = useState<number | null>(null);
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -32,19 +35,70 @@ const UserList = () => {
                         <td>{user.email}</td>
                         <td>
                             <div>
-                                <input type="button" value="Edit" onClick={() => setUserDataToView(user)}/>
-                                <input type="button" value="View" />
-                                <input type="button" value="Delete" />
+                                <input
+                                    type="button"
+                                    value="View"
+                                    onClick={() => setUserDataToView(user)}
+                                />
+                                <input
+                                    type="button"
+                                    value="Edit"
+                                    onClick={() => {
+                                        setEditUserId(user.id);
+                                        setShowEditModal(true)
+                                    }}
+                                />
+                                <input
+                                    type="button"
+                                    value="Delete"
+                                    onClick={() => setShowDeleteModal(true)}
+                                />
                             </div>
+                            {showEditModal && (
+                                <Modal
+                                    title="Edit User"
+                                    onClose={() => {setUserDataToView(null)}}
+                                    user={user}
+                                    userId={editUserId}
+                                >
+                                <div>
+                                    <span>Edit</span>
+                                    <hr />
+                                    <span onClick={() => {
+                                        setShowEditModal(false)
+                                    }}>Yes</span>
+                                    <span onClick={() => {setShowEditModal(false)}}>No</span>
+                                </div>
+                            </Modal>
+                            )}
+                            {showDeleteModal && (
+                                <Modal title="User Details" onClose={() => {setUserDataToView(null)}}>
+                                <div>
+                                    <span>{`Do you really want to delete this user ${user.name}?`}</span>
+                                    <br />
+                                    <span onClick={() => {
+                                        dispatch(deleteUserAction(user.id))
+                                        setShowDeleteModal(false)
+                                    }}>Yes</span>
+                                    <span onClick={() => {setShowDeleteModal(false)}}>No</span>
+                                </div>
+                            </Modal>
+                            )}
                         </td>
                     </tr>
+                    
                 ))}
                 
         </table>
         {userDataToView && (
             <Modal title="User Details" onClose={() => {setUserDataToView(null)}}>
                 <div>
-                    this children
+                    <div>
+                        <label>Name: {userDataToView.name}</label>
+                    </div>
+                    <div>
+                        <label>Email: {userDataToView.email}</label>
+                    </div>
                 </div>
             </Modal>
         )}
