@@ -1,21 +1,26 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import GlobalNav from './GlobalNav';
-import Style from './Layout.module.css'
+import Style from './Layout.module.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Layout = () => {
   return (
-    <article>
+    <>
+      <article>
         <header className={Style.header}>
             <h1>sdsds</h1>
         </header>
         <section className={Style["content-section"]}>
             <GlobalNav />
-            <main>
-                <Outlet />
+              <main>
+              <Outlet />
             </main>
-        </section>
-    </article>
+          </section>
+      </article>
+      <ToastContainer />
+    </>
   )
 }
 

@@ -1,39 +1,24 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Alexander",
-      "email": "al.gorin78@gmail.com"
+      "name": "masha",
+      "email": "masha@mail.ru",
+      "id": 3
     },
     {
-      "id": 2,
-      "name": "Zhenia",
-      "email": "zheniya@gmail.com"
+      "name": "Alexander Gorin",
+      "email": "alex@mail.ru",
+      "id": 8
     },
     {
-      "id": 3,
-      "name": "Sergey",
-      "email": "sergey@gmail.com"
+      "name": "vova",
+      "email": "vova@sdsd.ru",
+      "id": 9
     },
     {
-      "name": "Tatiyana",
-      "email": "tatiyana@mail.ru",
-      "id": 4
-    },
-    {
-      "name": "Olga",
-      "email": "Olga@mail.ru",
-      "id": 5
-    },
-    {
-      "name": "Nataliya",
-      "email": "Nataliya@mail.ru",
-      "id": 6
-    },
-    {
-      "name": "Masha",
-      "email": "Masha@gmail.com",
-      "id": 7
+      "name": "Zheniya",
+      "email": "bolshakova@mail.ru",
+      "id": 10
     }
   ],
   "posts": [
