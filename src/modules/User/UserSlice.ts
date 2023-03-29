@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ApiStatus, IUserForm, IUserState } from "./User.type";
-import { createUserApi, deleteUserApi, getUsersListApi } from "./UserService";
+import { toastSuccess } from "../../components/ToastifyConfig";
+import { ApiStatus, IUpdateUserActionProps, IUserForm, IUserState } from "./User.type";
+import { createUserApi, deleteUserApi, getUsersListApi, updateUserApi } from "./UserService";
 
 const initialState: IUserState = {
     list: [],
     listStatus: ApiStatus.ideal,
-    createUserFormStatus: ApiStatus.ideal
+    createUserFormStatus: ApiStatus.ideal,
+    updateUserFormStatus: ApiStatus.ideal
 }
 
 export const getUsersListAction = createAsyncThunk(
@@ -20,6 +22,14 @@ export const createUserAction = createAsyncThunk(
     "users/createUserAction",
     async (data: IUserForm) => {
         const response = await createUserApi(data);
+        return response.data;
+    }
+); 
+
+export const updateUserAction = createAsyncThunk(
+    "users/updateUserAction",
+    async ({ id, data }: IUpdateUserActionProps) => {
+        const response = await updateUserApi(id, data);
         return response.data;
     }
 ); 
@@ -57,6 +67,7 @@ const userSlice = createSlice({
         });
         builder.addCase(createUserAction.fulfilled, (state) => {
             state.createUserFormStatus = ApiStatus.success;
+            toastSuccess("User created")
         });
         builder.addCase(createUserAction.rejected, (state) => {
             state.createUserFormStatus = ApiStatus.error;
@@ -67,6 +78,16 @@ const userSlice = createSlice({
         });
         builder.addCase(deleteUserAction.rejected, (state) => {
             state.createUserFormStatus = ApiStatus.error;
+        });
+        builder.addCase(updateUserAction.pending, (state) => {
+            state.updateUserFormStatus = ApiStatus.loading;
+        });
+        builder.addCase(updateUserAction.fulfilled, (state) => {
+            state.updateUserFormStatus = ApiStatus.ideal;
+            toastSuccess("User updated")
+        });
+        builder.addCase(updateUserAction.rejected, (state) => {
+            state.updateUserFormStatus = ApiStatus.error;
         });
     },
 });

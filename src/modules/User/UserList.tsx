@@ -9,9 +9,9 @@ const UserList = () => {
   const {list, listStatus} = useAppSelector((state: RootState) => state.user);
 
   const [userDataToView, setUserDataToView] = useState<IUser | null>(null);
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  // const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
-  const [editUserId, setEditUserId] = useState<number | null>(null);
+  const [editUser, setEditUser] = useState<IUser | null>(null);
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -44,22 +44,21 @@ const UserList = () => {
                                     type="button"
                                     value="Edit"
                                     onClick={() => {
-                                        setEditUserId(user.id);
                                         setShowEditModal(true)
+                                        setEditUser(user)
                                     }}
                                 />
                                 <input
                                     type="button"
                                     value="Delete"
-                                    onClick={() => setShowDeleteModal(true)}
+                                    onClick={() => {dispatch(deleteUserAction(user.id))}}
                                 />
                             </div>
                             {showEditModal && (
                                 <Modal
                                     title="Edit User"
-                                    onClose={() => {setUserDataToView(null)}}
-                                    user={user}
-                                    userId={editUserId}
+                                    onClose={() => {setShowEditModal(false)}}
+                                    user={editUser}
                                 >
                                 <div>
                                     <span>Edit</span>
@@ -71,19 +70,18 @@ const UserList = () => {
                                 </div>
                             </Modal>
                             )}
-                            {showDeleteModal && (
-                                <Modal title="User Details" onClose={() => {setUserDataToView(null)}}>
+                            {/* {showDeleteModal && (
+                                <Modal title="User Details" onClose={() => {setEditUser(null)}}>
                                 <div>
-                                    <span>{`Do you really want to delete this user ${user.name}?`}</span>
+                                    <span>{`Do you really want to delete this user ${editUser?.name}? with id ${editUser?.id}`}</span>
                                     <br />
                                     <span onClick={() => {
-                                        dispatch(deleteUserAction(user.id))
                                         setShowDeleteModal(false)
                                     }}>Yes</span>
                                     <span onClick={() => {setShowDeleteModal(false)}}>No</span>
                                 </div>
                             </Modal>
-                            )}
+                            )} */}
                         </td>
                     </tr>
                     
