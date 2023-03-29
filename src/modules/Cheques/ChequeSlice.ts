@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ApiStatus, IChequeState } from "./Cheque.type";
-import { getChequesListApi } from "./ChequeService";
+import { ApiStatus, IChequeForm, IChequeState } from "./Cheque.type";
+import { createChequeApi, getChequesListApi } from "./ChequeService";
 
 const initialState: IChequeState = {
     list: [],
@@ -16,6 +16,14 @@ export const getChequesListAction = createAsyncThunk(
         return response.data
     }
 );
+
+export const createChequeAction = createAsyncThunk(
+    "users/createUserAction",
+    async (data: IChequeForm) => {
+        const response = await createChequeApi(data);
+        return response.data;
+    }
+); 
 
 const chequeSlice = createSlice({
     name: 'cheque',

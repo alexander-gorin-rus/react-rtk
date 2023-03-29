@@ -37,6 +37,16 @@ export enum ApiStatus {
     "error"
 }
 
+export interface IChequeForm {
+    id: string;
+    dateReg: ReactNode;
+    kioskName: string;
+    chequeType: number;
+    pays: IPays[];
+    sum: number;
+    positions: IPositions[]
+}
+
 export interface IChequeProps {
     cheque: ICheque;
 }
