@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ISelectProps, SelectEnum } from './types';
+import Styles from './SelectStyles.module.css'
 
 const SelectInput: React.FC<ISelectProps> = ({ label, value, onChange, options, chequeType }) => {
   const [selectedOption, setSelectedOption] = useState<SelectEnum>(SelectEnum.Option0);
@@ -12,7 +13,7 @@ const SelectInput: React.FC<ISelectProps> = ({ label, value, onChange, options, 
   return (
     <>
       <label>{label}</label>
-      <select style={{border: "1px solid red", width: "100%"}} value={selectedOption} onChange={handleSelectChange}>
+      <select className={Styles.select} value={selectedOption} onChange={handleSelectChange}>
         <option value={SelectEnum.Option0}>0</option>
         <option value={SelectEnum.Option1}>1</option>
       </select>

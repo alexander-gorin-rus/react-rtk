@@ -1,18 +1,18 @@
-import React, { FC } from 'react';
-import { IChequeProps } from '../Cheque.type';
-import Styles from '../ChequeStyle.module.css'
+import React, { FC } from "react";
+import { IChequeProps } from "../Cheque.type";
+import Styles from "../ChequeStyle.module.css";
 
-const ChequeGoods: FC<IChequeProps> = ({ cheque: {
-    positions,
-  } }) => {
-    
+const ChequeGoods: FC<IChequeProps> = ({ cheque: { positions } }) => {
   return (
     <div className={Styles.chequeItem}>
-        {positions && positions.map((item) => (
-            <span key={item.chequeId} className='cellItem'>{item.name}</span>
+      {positions &&
+        positions.map((item) => (
+          <span key={item.chequeId} className="cellItem">
+            {item.name}
+          </span>
         ))}
     </div>
-  )
-}
+  );
+};
 
-export default ChequeGoods
+export default ChequeGoods;

@@ -2,7 +2,6 @@ import React from 'react';
 import Style from './Layout.module.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ChequeForm from './Cheques/ChequeForm';
 import ChequesList from './Cheques/ChequesList';
 
 const Layout = () => {
@@ -14,7 +13,6 @@ const Layout = () => {
         </header>
         <section className={Style["content-section"]}>
           <ChequesList />
-          {/* <ChequeForm /> */}
         </section>
       </article>
       <ToastContainer />

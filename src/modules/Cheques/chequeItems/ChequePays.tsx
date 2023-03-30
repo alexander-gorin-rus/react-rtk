@@ -1,17 +1,14 @@
-import React, { FC } from 'react'
-import { IChequeProps } from '../Cheque.type'
+import React, { FC } from "react";
+import { IChequeProps } from "../Cheque.type";
+import Styles from "../ChequeStyle.module.css";
 
-const ChequePays: FC<IChequeProps> = ({ cheque: {
-    pays
-  } }) => {
-    
+const ChequePays: FC<IChequeProps> = ({ cheque: { pays } }) => {
+  const total = pays?.reduce((acc, curr) => acc + curr.sum, 0) || 0;
   return (
-    <div>
-      {pays && pays.map((item) => (
-        <span className='cellItem' key={item.id}>{item.sum}</span>
-      ))}
+    <div className={Styles.chequeItem}>
+      <span>{total}</span>
     </div>
-  )
-}
+  );
+};
 
-export default ChequePays
+export default ChequePays;
