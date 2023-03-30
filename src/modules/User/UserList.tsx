@@ -9,7 +9,6 @@ const UserList = () => {
   const {list, listStatus} = useAppSelector((state: RootState) => state.user);
 
   const [userDataToView, setUserDataToView] = useState<IUser | null>(null);
-  // const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editUser, setEditUser] = useState<IUser | null>(null);
   const dispatch = useAppDispatch()
@@ -56,50 +55,18 @@ const UserList = () => {
                             </div>
                             {showEditModal && (
                                 <Modal
-                                    title="Edit User"
+                                    onRerenderClick={() => {}}
                                     onClose={() => {setShowEditModal(false)}}
                                     user={editUser}
-                                >
-                                <div>
-                                    <span>Edit</span>
-                                    <hr />
-                                    <span onClick={() => {
-                                        setShowEditModal(false)
-                                    }}>Yes</span>
-                                    <span onClick={() => {setShowEditModal(false)}}>No</span>
-                                </div>
-                            </Modal>
+                                />
+                                
                             )}
-                            {/* {showDeleteModal && (
-                                <Modal title="User Details" onClose={() => {setEditUser(null)}}>
-                                <div>
-                                    <span>{`Do you really want to delete this user ${editUser?.name}? with id ${editUser?.id}`}</span>
-                                    <br />
-                                    <span onClick={() => {
-                                        setShowDeleteModal(false)
-                                    }}>Yes</span>
-                                    <span onClick={() => {setShowDeleteModal(false)}}>No</span>
-                                </div>
-                            </Modal>
-                            )} */}
                         </td>
                     </tr>
                     
                 ))}
                 
         </table>
-        {userDataToView && (
-            <Modal title="User Details" onClose={() => {setUserDataToView(null)}}>
-                <div>
-                    <div>
-                        <label>Name: {userDataToView.name}</label>
-                    </div>
-                    <div>
-                        <label>Email: {userDataToView.email}</label>
-                    </div>
-                </div>
-            </Modal>
-        )}
         
     </>
   )

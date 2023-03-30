@@ -1,9 +1,9 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import GlobalNav from './GlobalNav';
 import Style from './Layout.module.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ChequeForm from './Cheques/ChequeForm';
+import ChequesList from './Cheques/ChequesList';
 
 const Layout = () => {
   return (
@@ -13,11 +13,9 @@ const Layout = () => {
             <h1>Список чеков</h1>
         </header>
         <section className={Style["content-section"]}>
-            <GlobalNav />
-              <main>
-              <Outlet />
-            </main>
-          </section>
+          <ChequesList />
+          {/* <ChequeForm /> */}
+        </section>
       </article>
       <ToastContainer />
     </>

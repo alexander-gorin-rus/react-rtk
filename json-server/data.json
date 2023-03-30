@@ -1,52 +1,38 @@
 {
-    "cheques": [
-      {
-        "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC1",
-        "dateReg": "2020-02-26T18:25:57.763",
-        "kioskName": "Киоск № 11",
-        "sum": 9000,
-        "chequeType": 0,
-        "pays": [
-          {
-            "id": "61DA721D-FCC1-4480-B12D-5DE58F29D80B",
-            "sum": 9000
-          }
-        ],
-        "positions": [
-          {
-            "name": "Морс клюква из вологодской области",
-            "quantity": 2,
-            "price": 4500,
-            "sum": 9000,
-            "chequeId": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC1"
-          }
-        ]
-      },
-      {
-        "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC2",
-        "dateReg": "2020-02-27T18:25:57.763",
-        "kioskName": "Магазин Улыбка",
-        "sum": 550,
-        "chequeType": 0,
-        "pays": [
-          {
-            "sum": 250
-          }
-        ],
-        "positions": [
-          {
-            "name": "Плов узбекский",
-            "quantity": 1,
-            "price": 550,
-            "sum": 550
-          },
-          {
-            "name": "Суп лапшп",
-            "quantity": 1,
-            "price": 230,
-            "sum": 230
-          }
-        ]
-      }
-    ]
+  "cheques": [
+    {
+      "dateReg": "2023-03-30T07:06:20.050Z",
+      "kioskName": "Киоск № 1",
+      "chequeType": 0,
+      "sum": 9000,
+      "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC1",
+      "positions": [
+        {
+          "name": "Лапша по-пекински",
+          "quantity": 1,
+          "price": 14900,
+          "sum": 14900
+        },
+        {
+          "name": "Котлеты по киевски",
+          "quantity": 1,
+          "price": 150,
+          "sum": 150
+        }
+      ]
+    },
+    {
+      "dateReg": "2023-03-30T08:00:59.501Z",
+      "kioskName": "Магазин Улыбка",
+      "chequeType": 0,
+      "sum": 510,
+      "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC2"
+    },
+    {
+      "dateReg": "2023-03-30T08:02:53.253Z",
+      "kioskName": "test",
+      "sum": 101,
+      "id": "IhPdlRl"
+    }
+  ]
 }

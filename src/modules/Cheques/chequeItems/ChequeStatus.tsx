@@ -17,7 +17,7 @@ const ChequeStatus: FC<IChequeProps> = ({ cheque: {
       };
   return (
     <div>
-      {pays.map((item) => (
+      {pays && pays.map((item) => (
         <PaymentStatus key={item.id} item={item} />
       ))}
     </div>

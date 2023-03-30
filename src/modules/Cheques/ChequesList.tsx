@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { RootState } from '../../app/store';
+import Modal from '../../components/Modal';
 import { ApiStatus, ICheque } from './Cheque.type';
 import ChequeDate from './chequeItems/ChequeDate';
 import ChequeGoods from './chequeItems/ChequeGoods';
@@ -10,15 +11,19 @@ import ChequeQuantity from './chequeItems/ChequeQuantity';
 import ChequeStatus from './chequeItems/ChequeStatus';
 import ChequeSum from './chequeItems/ChequeSum';
 import ChequeType from './chequeItems/ChequeTypes';
-import { getChequesListAction } from './ChequeSlice';
+import { deleteChequeAction, getChequesListAction } from './ChequeSlice';
 import Styles from './ChequeStyle.module.css'
 
 const ChequesList = () => {
+    const [showEditModal, setShowEditModal] = useState(false);
+    const [editCheque, setEditCheque] = useState<ICheque | null>(null);
     const {list, listStatus} = useAppSelector((state: RootState) => state.cheque);
+    const [rerendering, setRerendering] = useState<boolean>(false)
     const dispatch = useAppDispatch()
+
     useEffect(() => {
         dispatch(getChequesListAction())
-      }, [])
+      }, [rerendering])
   return (
     <table>
             <tr>
@@ -34,7 +39,7 @@ const ChequesList = () => {
             </tr>
             {listStatus === ApiStatus.loading && <tbody>Идет загрузка чеков</tbody>}
             {listStatus === ApiStatus.error && <tbody>Ошибка загрузки чеков</tbody>}
-            {listStatus === ApiStatus.ideal && list.map((cheque: ICheque, index: number) => (
+            {listStatus === ApiStatus.ideal && list.map((cheque: ICheque) => (
                     <tr key={cheque.id}>
                         <td><ChequeDate cheque={cheque} /></td>
                         <td><ChequeKiosk cheque={cheque} /></td>
@@ -48,56 +53,36 @@ const ChequesList = () => {
                             <div className={Styles.chequeItem}>
                                 <input
                                     type="button"
-                                    value="Детали"
-                                    //onClick={() => setUserDataToView(user)}
+                                    value="Создать"
+                                    onClick={() => {
+                                        setShowEditModal(true)
+                                    }}
                                 />
                                 <input
                                     type="button"
                                     value="Редактировать"
-                                    // onClick={() => {
-                                    //     setShowEditModal(true)
-                                    //     setEditUser(user)
-                                    // }}
+                                    onClick={() => {
+                                        setShowEditModal(true)
+                                        setEditCheque(cheque)
+                                    }}
                                 />
                                 <input
                                     type="button"
                                     value="Удалить"
-                                    //onClick={() => {dispatch(deleteUserAction(user.id))}}
+                                    onClick={() => {dispatch(deleteChequeAction(cheque.id))}}
                                 />
                             </div>
-                            {/* {showEditModal && (
+                            {showEditModal && (
                                 <Modal
-                                    title="Edit User"
+                                    onRerenderClick={() => setRerendering(!rerendering)}
                                     onClose={() => {setShowEditModal(false)}}
-                                    user={editUser}
-                                >
-                                <div>
-                                    <span>Edit</span>
-                                    <hr />
-                                    <span onClick={() => {
-                                        setShowEditModal(false)
-                                    }}>Yes</span>
-                                    <span onClick={() => {setShowEditModal(false)}}>No</span>
-                                </div>
-                            </Modal>
-                            )} */}
-                            {/* {showDeleteModal && (
-                                <Modal title="User Details" onClose={() => {setEditUser(null)}}>
-                                <div>
-                                    <span>{`Do you really want to delete this user ${editUser?.name}? with id ${editUser?.id}`}</span>
-                                    <br />
-                                    <span onClick={() => {
-                                        setShowDeleteModal(false)
-                                    }}>Yes</span>
-                                    <span onClick={() => {setShowDeleteModal(false)}}>No</span>
-                                </div>
-                            </Modal>
-                            )} */}
+                                    cheque={editCheque}
+                                />
+                                
+                            )}
                         </td>
                     </tr>
-                    
-                ))}
-                
+                ))} 
         </table>
   )
 }

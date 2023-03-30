@@ -6,7 +6,7 @@ const ChequeType: FC<IChequeProps> = ({ cheque: {
   } }) => {
     
   return (
-    <span className='cellItem'>{chequeType === 0 ? 'Продажа' : 'Возврат'}</span>
+    <span className='cellItem'>{chequeType === "0" ? 'Продажа' : 'Возврат'}</span>
   )
 }
 

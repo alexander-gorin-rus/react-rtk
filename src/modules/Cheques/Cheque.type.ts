@@ -2,20 +2,20 @@ import { ReactNode } from "react";
 
 export interface ICheque {
     id: string;
-    dateReg: ReactNode;
+    dateReg: any;
     kioskName: string;
-    chequeType: number;
+    chequeType: string;
     pays: IPays[];
     sum: number;
     positions: IPositions[]
 }
 
-interface IPays {
+export interface IPays {
     id: string;
     sum: number;
 }
 
-interface IPositions {
+export interface IPositions {
     chequeId: string;
     name: string;
     quantity: number;
@@ -38,15 +38,21 @@ export enum ApiStatus {
 }
 
 export interface IChequeForm {
-    id: string;
-    dateReg: ReactNode;
+    id?: string;
+    dateReg: Date;
     kioskName: string;
-    chequeType: number;
-    pays: IPays[];
-    sum: number;
-    positions: IPositions[]
+    chequeType: any;
+    pays?: IPays[];
+    sum?: number;
+    positions?: IPositions[]
 }
 
 export interface IChequeProps {
     cheque: ICheque;
+}
+
+
+export interface IUpdateChequeActionProps {
+    id?: string;
+    chequeData: IChequeForm;
 }

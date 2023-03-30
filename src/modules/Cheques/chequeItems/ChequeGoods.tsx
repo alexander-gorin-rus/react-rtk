@@ -8,7 +8,7 @@ const ChequeGoods: FC<IChequeProps> = ({ cheque: {
     
   return (
     <div className={Styles.chequeItem}>
-        {positions.map((item) => (
+        {positions && positions.map((item) => (
             <span key={item.chequeId} className='cellItem'>{item.name}</span>
         ))}
     </div>

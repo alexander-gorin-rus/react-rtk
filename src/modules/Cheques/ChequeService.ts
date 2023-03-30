@@ -7,5 +7,15 @@ export const getChequesListApi = async () => {
 }
 
 export const createChequeApi = async (data: IChequeForm) => {
-    return await httpService.post<ICheque>(ApiConfig.user, data);
+    return await httpService.post<ICheque>(ApiConfig.cheques, data);
+}
+
+export const updateChequeApi = async (id: string, data: IChequeForm) => {
+    const url = `${ApiConfig.cheques}/${id}`
+    return await httpService.put<ICheque>(url, data);
 } 
+
+export const deleteChequeApi = async (id: string) => {
+    const url = `${ApiConfig.cheques}/${id}`
+    return await httpService.delete<ICheque>(url);
+}

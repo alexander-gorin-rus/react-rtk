@@ -42,7 +42,6 @@ export const deleteUserAction = createAsyncThunk(
     }
 ); 
 
-
 const userSlice = createSlice({
     name: "user",
     initialState,

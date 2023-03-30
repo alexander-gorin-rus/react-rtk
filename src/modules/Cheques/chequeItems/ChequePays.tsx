@@ -7,7 +7,7 @@ const ChequePays: FC<IChequeProps> = ({ cheque: {
     
   return (
     <div>
-      {pays.map((item) => (
+      {pays && pays.map((item) => (
         <span className='cellItem' key={item.id}>{item.sum}</span>
       ))}
     </div>

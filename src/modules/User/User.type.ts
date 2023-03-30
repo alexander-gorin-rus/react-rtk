@@ -17,8 +17,6 @@ export interface IUserState {
     createUserFormStatus: ApiStatus
     updateUserFormStatus: ApiStatus
 }
-
-
 export interface IUserForm {
     name: string;
     email: string;

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ApiStatus, IChequeForm, IChequeState } from "./Cheque.type";
-import { createChequeApi, getChequesListApi } from "./ChequeService";
+import { toastError, toastSuccess } from "../../components/ToastifyConfig";
+import { ApiStatus, IChequeForm, IChequeState, IUpdateChequeActionProps } from "./Cheque.type";
+import { createChequeApi, deleteChequeApi, getChequesListApi, updateChequeApi } from "./ChequeService";
 
 const initialState: IChequeState = {
     list: [],
@@ -18,10 +19,29 @@ export const getChequesListAction = createAsyncThunk(
 );
 
 export const createChequeAction = createAsyncThunk(
-    "users/createUserAction",
+    "cheques/createChequesAction",
     async (data: IChequeForm) => {
         const response = await createChequeApi(data);
         return response.data;
+    }
+);
+
+export const updateChequeAction = createAsyncThunk(
+    "cheques/updateChequeAction",
+    async ({ id, chequeData }: IUpdateChequeActionProps) => {
+        if (!id) {
+            throw new Error("Неверный параметр.");
+        }
+        const response = await updateChequeApi(id, chequeData);
+        return response.data;
+    }
+); 
+
+export const deleteChequeAction = createAsyncThunk(
+    "cheques/deleteChequeAction",
+    async (id: string) => {
+        await deleteChequeApi(id);
+        return id;
     }
 ); 
 
@@ -43,6 +63,37 @@ const chequeSlice = createSlice({
         });
         builder.addCase(getChequesListAction.rejected, (state) => {
             state.listStatus = ApiStatus.error;
+        });
+        builder.addCase(createChequeAction.pending, (state) => {
+            state.createChequeFormStatus = ApiStatus.loading;
+        });
+        builder.addCase(createChequeAction.fulfilled, (state) => {
+            state.createChequeFormStatus = ApiStatus.success;
+            toastSuccess("Чек успешно создан")
+        });
+        builder.addCase(createChequeAction.rejected, (state) => {
+            state.createChequeFormStatus = ApiStatus.error;
+            toastError("Не удалось создать чек")
+        });
+        builder.addCase(deleteChequeAction.fulfilled, (state, action) => {
+            const newList = state.list.filter(x => x.id !== action.payload);
+            state.list = newList;
+            toastSuccess("Чек успешно удален")
+        });
+        builder.addCase(deleteChequeAction.rejected, (state) => {
+            state.createChequeFormStatus = ApiStatus.error;
+            toastError("Не удалось удалить чек")
+        });
+        builder.addCase(updateChequeAction.pending, (state) => {
+            state.updateChequeFormStatus = ApiStatus.loading;
+        });
+        builder.addCase(updateChequeAction.fulfilled, (state) => {
+            state.updateChequeFormStatus = ApiStatus.ideal;
+            toastSuccess("Чек успешно изменен")
+        });
+        builder.addCase(updateChequeAction.rejected, (state) => {
+            state.updateChequeFormStatus = ApiStatus.error;
+            toastError("Не удалось изменить чек")
         });
     }
 });
