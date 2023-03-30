@@ -1,5 +1,5 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import chequeReducer from '../modules/Cheques/ChequeSlice'
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import chequeReducer from "../modules/Cheques/ChequeSlice";
 
 export const store = configureStore({
   reducer: {

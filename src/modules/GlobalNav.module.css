@@ -1,14 +1,14 @@
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 a {
-    margin-left: 6px;
-    text-decoration:  none;
+  margin-left: 6px;
+  text-decoration: none;
 }
 
-.active{
-    text-decoration: underline;
-    color: rgb(138, 18, 108);
-  }
+.active {
+  text-decoration: underline;
+  color: rgb(138, 18, 108);
+}

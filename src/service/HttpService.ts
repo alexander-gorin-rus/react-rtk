@@ -1,11 +1,10 @@
-import axios from 'axios'
+import axios from "axios";
 
 const axiosExports = {
-    get: axios.get,
-    post: axios.post,
-    put: axios.put,
-    delete: axios.delete,
-
-}
+  get: axios.get,
+  post: axios.post,
+  put: axios.put,
+  delete: axios.delete,
+};
 
 export default axiosExports;

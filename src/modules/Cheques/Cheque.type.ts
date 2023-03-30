@@ -3,13 +3,12 @@ export interface ICheque {
   dateReg: any;
   kioskName: string;
   chequeType: string;
-  pays: IPays[];
+  pays: IPay[];
   sum: number;
   positions: IPositions[];
 }
 
-export interface IPays {
-  id: string;
+export interface IPay {
   sum: number;
 }
 
@@ -40,7 +39,7 @@ export interface IChequeForm {
   dateReg: Date;
   kioskName: string;
   chequeType: any;
-  pays?: IPays[];
+  pays: IPay[];
   sum?: number;
   positions?: IPositions[];
 }
