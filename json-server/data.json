@@ -1,0 +1,29 @@
+{
+  "cheques": [
+    {
+      "dateReg": "2023-03-30T09:18:17.893Z",
+      "kioskName": "Киоск № 1",
+      "chequeType": 0,
+      "sum": 9000,
+      "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC1",
+      "pays": [
+        {
+          "sum": 500
+        }
+      ]
+    },
+    {
+      "dateReg": "2023-03-30T08:00:59.501Z",
+      "kioskName": "Магазин Улыбка",
+      "chequeType": 0,
+      "sum": 510,
+      "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC2"
+    },
+    {
+      "dateReg": "2023-03-30T08:02:53.253Z",
+      "kioskName": "test",
+      "sum": 101,
+      "id": "IhPdlRl"
+    }
+  ]
+}

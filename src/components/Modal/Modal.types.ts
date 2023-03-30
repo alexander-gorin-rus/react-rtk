@@ -1,9 +1,6 @@
-import { IUser } from "../../modules/User/User.type";
-
+import { ICheque } from "../../modules/Cheques/Cheque.type";
 export interface IProps {
-    title: string;
-    children: JSX.Element;
-    onClose: () => void;
-    user?: IUser | null;
-    
+  onRerenderClick: () => void;
+  onClose: () => void;
+  cheque?: ICheque | null;
 }

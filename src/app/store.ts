@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import userReducer from '../modules/User/UserSlice'
+import chequeReducer from '../modules/Cheques/ChequeSlice'
 
 export const store = configureStore({
   reducer: {
-    user: userReducer
+    cheque: chequeReducer,
   },
 });
 
