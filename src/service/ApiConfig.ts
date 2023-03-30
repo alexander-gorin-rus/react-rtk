@@ -1,8 +1,8 @@
 const baseUrl = "http://localhost:8000";
 
 const ApiConfig = {
-    user: `${baseUrl}/users`,
-    cheques: `${baseUrl}/cheques`,
-}
+  user: `${baseUrl}/users`,
+  cheques: `${baseUrl}/cheques`,
+};
 
 export default ApiConfig;

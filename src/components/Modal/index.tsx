@@ -4,6 +4,7 @@ import { RootState } from "../../app/store";
 import {
   ApiStatus,
   IChequeForm,
+  IPay,
   IPositions,
 } from "../../modules/Cheques/Cheque.type";
 import {
@@ -21,7 +22,7 @@ const Modal = (props: IProps) => {
   const [dateReg, setDateReg] = useState(new Date());
   const [kioskName, setKioskame] = useState("");
   const [chequeType, setChequeType] = useState<any>();
-  const [pays, setPays] = useState<number | any>();
+  const [pays, setPays] = useState<IPay[] | any>();
   const [sum, setSum] = useState<number>();
   const [positions, setPositions] = useState<IPositions[]>();
   const [success, setSuccess] = useState<boolean>(false);
@@ -104,7 +105,6 @@ const Modal = (props: IProps) => {
         </span>
         {cheque ? <h2>Изменить чек</h2> : <h2>Создать чек</h2>}
         <form className={Styles.form} onSubmit={onSubmitForm}>
-        {JSON.stringify(cheque?.pays)}
           <Input
             label="Название киоска"
             type="text"
@@ -124,7 +124,7 @@ const Modal = (props: IProps) => {
             chequeType={chequeType}
           />
           <Input
-            label="Сумма"
+            label="Цена товара"
             type="number"
             value={pays}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -133,7 +133,7 @@ const Modal = (props: IProps) => {
             }}
           />
           <Input
-            label="Сумма"
+            label="Сумма чека"
             type="number"
             value={sum?.toString() ?? ""}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {

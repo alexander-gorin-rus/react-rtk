@@ -1,13 +1,12 @@
-import React, { FC } from 'react'
-import { IChequeProps } from '../Cheque.type'
+import React, { FC } from "react";
+import { IChequeProps } from "../Cheque.type";
 
-const ChequeType: FC<IChequeProps> = ({ cheque: {
-    chequeType
-  } }) => {
-    
+const ChequeType: FC<IChequeProps> = ({ cheque: { chequeType } }) => {
   return (
-    <span className='cellItem'>{chequeType === "0" ? 'Продажа' : 'Возврат'}</span>
-  )
-}
+    <span className="cellItem">
+      {chequeType === "0" ? "Продажа" : "Возврат"}
+    </span>
+  );
+};
 
-export default ChequeType
+export default ChequeType;

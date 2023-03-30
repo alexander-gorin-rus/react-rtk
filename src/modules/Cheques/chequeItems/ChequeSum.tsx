@@ -1,13 +1,8 @@
-import React, { FC } from 'react'
-import { IChequeProps } from '../Cheque.type'
+import React, { FC } from "react";
+import { IChequeProps } from "../Cheque.type";
 
-const ChequeSum: FC<IChequeProps> = ({ cheque: {
-    sum,
-  } }) => {
-    
-  return (
-    <span className='cellItem'>{sum}</span>
-  )
-}
+const ChequeSum: FC<IChequeProps> = ({ cheque: { sum } }) => {
+  return <span className="cellItem">{sum}</span>;
+};
 
-export default ChequeSum
+export default ChequeSum;

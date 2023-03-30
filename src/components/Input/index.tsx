@@ -1,12 +1,6 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
 import Styles from "./InputStyle.module.css";
-
-interface IProps {
-  label: string;
-  type: string;
-  value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-}
+import { IProps } from "./types";
 
 const Input = (props: IProps) => {
   const { label, type, value, onChange } = props;
