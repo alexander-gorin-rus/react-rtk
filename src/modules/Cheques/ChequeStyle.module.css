@@ -17,3 +17,15 @@
   float: right;
   margin-top: 10px;
 }
+
+.info-wrapper {
+  text-align: center;
+}
+
+.loading {
+  color: rgb(12, 196, 12);
+}
+
+.error {
+  color: red;
+}
