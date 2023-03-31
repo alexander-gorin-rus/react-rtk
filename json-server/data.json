@@ -1,29 +1,162 @@
 {
-  "cheques": [
-    {
-      "dateReg": "2023-03-30T09:18:17.893Z",
-      "kioskName": "Киоск № 1",
-      "chequeType": 0,
-      "sum": 9000,
-      "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC1",
-      "pays": [
-        {
-          "sum": 500
-        }
-      ]
-    },
-    {
-      "dateReg": "2023-03-30T15:24:36.372Z",
-      "kioskName": "Магазин Улыбка 2",
-      "chequeType": 0,
-      "sum": 550,
-      "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC2"
-    },
-    {
-      "dateReg": "2023-03-30T15:05:54.123Z",
-      "kioskName": "Новые Челны 1",
-      "sum": 23232,
-      "id": "r3WL2LR"
-    }
-  ]
-}
+    "cheques": [
+      {
+        "pays": [
+          {
+            "kioskUid": null,
+            "uid": "61DA721D-FCC1-4480-B12D-5DE58F29D80B",
+            "chequeHeadUid": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC1",
+            "sum": 9000,
+            "payType": 0,
+            "info": null,
+            "datePay": "2020-02-26T18:26:32.957"
+          }
+        ],
+        "positions": [
+          {
+            "qRcode": "5A2716D132C6-31-1194",
+            "name": "Морс клюква из вологодской области",
+            "quantity": 2,
+            "price": 4500,
+            "sum": 9000,
+            "nds": 0,
+            "nsp": 0,
+            "discount": 0,
+            "discountType": 0,
+            "img": null,
+            "parentUid": null,
+            "prototypeUid": null,
+            "prototypeType": 0,
+            "order": 0,
+            "chequeUid": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC1",
+            "photos": 0,
+            "goodUid": "44e33eb3-2978-4f3c-a425-1380b747a10e"
+          }
+        ],
+        "uid": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC1",
+        "sum": 9000,
+        "payType": 0,
+        "info": null,
+        "chequeState": 1,
+        "selectedQRCODE": null,
+        "clientUID": "DMZRdpvTYTFOmab/iEM/nXAKezWaCt0cw+vUwm8X+w0=",
+        "clietnInfo": "",
+        "chequeType": 0,
+        "dateReg": "2020-02-26T18:25:57.763",
+        "dateClose": "2020-02-26T18:26:28.377",
+        "kioskUid": "656BDDC5-AC89-4099-BB11-62C524FD7A8D",
+        "kioskName": "Киоск № 11",
+        "photos": 0,
+        "num": "A0011.000490",
+        "videoState": 4
+      },
+     
+      
+      {
+        "pays": [
+          {
+            "kioskUid": null,
+            "uid": "11A2962F-4F79-4EDB-9AD5-868D780EE0BB",
+            "chequeHeadUid": "E8890775-AC75-4ED5-9B71-9003341A0758",
+            "sum": 14900,
+            "payType": 0,
+            "info": null,
+            "datePay": "2020-02-25T13:30:28.387"
+          }
+        ],
+        "positions": [
+          {
+            "qRcode": "65C500317A6D-20-3A34",
+            "name": "Лапша по-пекински",
+            "quantity": 1,
+            "price": 14900,
+            "sum": 14900,
+            "nds": 0,
+            "nsp": 0,
+            "discount": 0,
+            "discountType": 0,
+            "img": null,
+            "parentUid": null,
+            "prototypeUid": null,
+            "prototypeType": 0,
+            "order": 0,
+            "chequeUid": "E8890775-AC75-4ED5-9B71-9003341A0758",
+            "photos": 0,
+            "goodUid": "a39905a2-423f-450c-aed7-53312139a77b"
+          }
+        ],
+        "parents": [],
+        "childs": [],
+        "uid": "E8890775-AC75-4ED5-9B71-9003341A0758",
+        "sum": 14900,
+        "payType": 0,
+        "info": null,
+        "chequeState": 1,
+        "selectedQRCODE": null,
+        "clientUID": "VemKtaxZVBIFXA5FJ2KICtTBn1enQFcZIXiwHvYRi8E=",
+        "clietnInfo": "",
+        "chequeType": 0,
+        "dateReg": "2020-02-25T13:29:52.43",
+        "dateClose": "2020-02-25T13:30:25.347",
+        "kioskUid": "656BDDC5-AC89-4099-BB11-62C524FD7A8D",
+        "kioskName": "Киоск № 11",
+        "photos": 0,
+        "num": "A0011.000487",
+        "videoState": -1,
+        "isTest": ""
+      },
+      {
+        "pays": [
+          {
+            "kioskUid": null,
+            "uid": "FFFDDF0E-7D81-4817-99E9-1B82CFEA53B8",
+            "chequeHeadUid": "61AF253B-6950-4580-9844-AF2D26C77308",
+            "sum": 11900,
+            "payType": 0,
+            "info": null,
+            "datePay": "2020-02-21T14:32:12.847"
+          }
+        ],
+        "positions": [
+          {
+            "qRcode": "91CF0031E04D-90013B0-2E7C",
+            "name": "Куриное филе",
+            "quantity": 1,
+            "price": 11900,
+            "sum": 11900,
+            "nds": 0,
+            "nsp": 0,
+            "discount": 0,
+            "discountType": 0,
+            "img": null,
+            "parentUid": null,
+            "prototypeUid": null,
+            "prototypeType": 0,
+            "order": 0,
+            "chequeUid": "61AF253B-6950-4580-9844-AF2D26C77308",
+            "photos": 0,
+            "goodUid": "c0812145-d035-4334-bdd1-fc905fc2eaf1"
+          }
+        ],
+        "parents": [],
+        "childs": [],
+        "uid": "61AF253B-6950-4580-9844-AF2D26C77308",
+        "sum": 11900,
+        "payType": 0,
+        "info": null,
+        "chequeState": 1,
+        "selectedQRCODE": null,
+        "clientUID": "g0CxjHpdqPubpdvNGnRxxAe0kthJQQ8HsGwpAs+ylHc=",
+        "clietnInfo": "",
+        "chequeType": 0,
+        "dateReg": "2020-02-21T14:31:33.837",
+        "dateClose": "2020-02-21T14:32:08.437",
+        "kioskUid": "656BDDC5-AC89-4099-BB11-62C524FD7A8D",
+        "kioskName": "Киоск № 11",
+        "photos": 0,
+        "num": "A0011.000440",
+        "videoState": 4,
+        "isTest": ""
+      }
+    ]
+  }

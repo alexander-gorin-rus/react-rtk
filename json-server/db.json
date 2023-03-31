@@ -1,41 +1,36 @@
 {
-  "users": [
+  "cheques": [
     {
-      "name": "masha",
-      "email": "masha@mail.ru",
-      "id": 3
+      "dateReg": "2023-03-31T00:56:57.682Z",
+      "kioskName": "Киоск № 1",
+      "chequeType": 0,
+      "sum": 9001,
+      "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC1"
     },
     {
-      "name": "Alexander Gorin",
-      "email": "alex@mail.ru",
-      "id": 8
+      "dateReg": "2023-03-31T01:23:59.524Z",
+      "kioskName": "Магазин Улыбка 2",
+      "chequeType": 0,
+      "sum": 553,
+      "id": "7DBF0520-045C-40AE-83C4-6A8D2F4FFFC2"
     },
     {
-      "name": "vova",
-      "email": "vova@sdsd.ru",
-      "id": 9
+      "dateReg": "2023-03-30T15:05:54.123Z",
+      "kioskName": "Новые Челны 1",
+      "sum": 23232,
+      "id": "r3WL2LR"
     },
     {
-      "name": "Zheniya",
-      "email": "bolshakova@mail.ru",
-      "id": 10
-    }
-  ],
-  "posts": [
+      "dateReg": "2023-03-31T00:46:50.618Z",
+      "kioskName": "test 2",
+      "sum": 2222,
+      "id": "YKHaT_P"
+    },
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "dateReg": "2023-03-31T01:35:00.344Z",
+      "kioskName": "test 22",
+      "sum": 501,
+      "id": "BYI6Mi-"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

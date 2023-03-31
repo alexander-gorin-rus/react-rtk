@@ -6,7 +6,11 @@ const ChequePays: FC<IChequeProps> = ({ cheque: { pays } }) => {
   const total = pays?.reduce((acc, curr) => acc + curr.sum, 0) || 0;
   return (
     <div className={Styles.chequeItem}>
-      <span>{total}</span>
+      {pays && pays.length === 1 ? (
+        <span>{pays[0].sum}</span>
+      ) : (
+        <span>{total}</span>
+      )}
     </div>
   );
 };

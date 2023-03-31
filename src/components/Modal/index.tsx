@@ -86,7 +86,7 @@ const Modal = (props: IProps) => {
   }, [cheque]);
 
   const handleClose = () => {
-    onRerenderClick();
+    // onRerenderClick();
     onClose();
   };
 
